@@ -1,70 +1,65 @@
-# claude.md
+# 🧠 claude.md
 
-My global [Claude Code](https://claude.com/claude-code) configuration: memory instructions, a custom research subagent, a tuned permission set, and the plugins I run.
+> My global [Claude Code](https://claude.com/claude-code) setup — instructions, a research agent, tuned permissions, and the plugins I actually run.
 
-## Layout
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Claude Code](https://img.shields.io/badge/Claude_Code-config-orange?logo=anthropic&logoColor=white)
+![Plugins](https://img.shields.io/badge/plugins-9-blue)
 
-| Path | Purpose |
-|------|---------|
-| `CLAUDE.md` | Global instructions — response style, coding standards, git and execution rules. Maps to `~/.claude/CLAUDE.md`. |
-| `.claude/settings.json` | Permission allow/deny/ask lists, enabled plugins, and extra marketplaces. |
-| `.claude/agents/dev-pattern-researcher.md` | Custom subagent that researches current real-world conventions before new features. |
+## 📦 What's inside
 
-## Using it
+| Path | What |
+|------|------|
+| `CLAUDE.md` | Global instructions — style, coding rules, git workflow. |
+| `.claude/settings.json` | Permissions + enabled plugins + marketplaces. |
+| `.claude/agents/dev-pattern-researcher.md` | Subagent that checks current real-world conventions *before* you build. |
 
-**As a project** — clone and open it in Claude Code. `CLAUDE.md`, `.claude/settings.json`, and the agent load automatically while you work in this directory.
+## 🚀 Use it
 
-**As global config** — copy into your user scope:
+Open the folder in Claude Code (auto-loads here), or copy into your user scope:
 
 ```bash
 cp CLAUDE.md ~/.claude/CLAUDE.md
-cp .claude/agents/dev-pattern-researcher.md ~/.claude/agents/
-# merge .claude/settings.json into ~/.claude/settings.json
+cp .claude/agents/*.md ~/.claude/agents/
+# then merge .claude/settings.json into ~/.claude/settings.json
 ```
 
-`settings.json` registers the two non-official marketplaces (`extraKnownMarketplaces`) and lists the plugins to enable (`enabledPlugins`), but Claude Code does **not** auto-install them. You are prompted to install when you trust the folder, or install them manually below.
+> ⚠️ `settings.json` *lists* the plugins, it doesn't install them. Claude Code prompts you on trust — or just run the commands below.
 
-## Plugins
+## 🔌 Plugins
 
-The official marketplace (`claude-plugins-official`) is available by default. Add the other two:
+The official marketplace ships by default. Add the two extras, then install:
 
 ```
 /plugin marketplace add ChromeDevTools/chrome-devtools-mcp
 /plugin marketplace add openai/codex-plugin-cc
-```
 
-Then install:
-
-```
 /plugin install superpowers@claude-plugins-official
-/plugin install commit-commands@claude-plugins-official
+/plugin install codex@openai-codex
 /plugin install context7@claude-plugins-official
+/plugin install commit-commands@claude-plugins-official
 /plugin install frontend-design@claude-plugins-official
 /plugin install security-guidance@claude-plugins-official
 /plugin install pyright-lsp@claude-plugins-official
 /plugin install typescript-lsp@claude-plugins-official
-/plugin install codex@openai-codex
 /plugin install chrome-devtools-mcp@chrome-devtools-plugins
 ```
 
-| Plugin | What it adds |
-|--------|--------------|
-| `superpowers` | Skill library and workflow disciplines: brainstorming, TDD, systematic debugging, code review. |
-| `codex` | OpenAI Codex review and rescue (`/codex:review`, `/codex:adversarial-review`). |
-| `context7` | Up-to-date library and API docs over MCP. |
-| `frontend-design` | Production-grade frontend UI generation. |
-| `commit-commands` | `/commit`, `/commit-push-pr`, branch cleanup. |
-| `security-guidance` | Security review guidance for sensitive changes. |
-| `pyright-lsp` | Python LSP navigation (pyright). |
-| `typescript-lsp` | TypeScript LSP navigation. |
-| `chrome-devtools-mcp` | Browser automation and debugging via Chrome DevTools MCP. |
+The four I lean on every day:
 
-Marketplace and install commands also work as `claude plugin ...` from the shell.
+| Plugin | Why it earns its slot |
+|--------|-----------------------|
+| 🦸 `superpowers` | Skills + disciplines: brainstorming, TDD, debugging, reviews. |
+| 🔍 `codex` | A grumpy second reviewer (`/codex:review`, `/codex:adversarial-review`). |
+| 📚 `context7` | Live library/API docs, so I stop hallucinating APIs from memory. |
+| ✅ `commit-commands` | `/commit`, `/commit-push-pr`, branch cleanup. |
 
-## Agent
+The rest pull their weight only when the work calls for it: `pyright-lsp` / `typescript-lsp` for Python/TS navigation, `frontend-design` for UI, `chrome-devtools-mcp` for browser debugging, `security-guidance` for the scary changes.
 
-`dev-pattern-researcher` (sonnet) finds and synthesizes dominant, current engineering conventions from sources in the last 12 months before any new feature or architecture decision.
+## 🤖 The agent
 
-## License
+`dev-pattern-researcher` digs up what practitioners *actually* do right now (sources < 12 months old) and hands back a recommendation — not a pile of links.
 
-[MIT](LICENSE)
+## 📄 License
+
+[MIT](LICENSE) — take it, remix it, no warranty.
