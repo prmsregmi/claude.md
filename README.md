@@ -1,12 +1,12 @@
-# 🧠 claude.md
+# claude.md
 
 > My global [Claude Code](https://claude.com/claude-code) setup — instructions, a research agent, tuned permissions, and the plugins I actually run.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-![Claude Code](https://img.shields.io/badge/Claude_Code-config-orange?logo=anthropic&logoColor=white)
+![Claude Code](https://img.shields.io/badge/Claude_Code-config-orange)
 ![Plugins](https://img.shields.io/badge/plugins-9-blue)
 
-## 📦 What's inside
+## What's inside
 
 | Path | What |
 |------|------|
@@ -14,7 +14,7 @@
 | `.claude/settings.json` | Permissions + enabled plugins + marketplaces. |
 | `.claude/agents/dev-pattern-researcher.md` | Subagent that checks current real-world conventions *before* you build. |
 
-## 🚀 Use it
+## Use it
 
 Open the folder in Claude Code (auto-loads here), or copy into your user scope:
 
@@ -24,9 +24,9 @@ cp .claude/agents/*.md ~/.claude/agents/
 # then merge .claude/settings.json into ~/.claude/settings.json
 ```
 
-> ⚠️ `settings.json` *lists* the plugins, it doesn't install them. Claude Code prompts you on trust — or just run the commands below.
+> `settings.json` *lists* the plugins, it doesn't install them. Claude Code prompts you on trust — or just run the commands below.
 
-## 🔌 Plugins
+## Plugins
 
 The official marketplace ships by default. Add the two extras, then install:
 
@@ -49,17 +49,17 @@ The four I lean on every day:
 
 | Plugin | Why it earns its slot |
 |--------|-----------------------|
-| 🦸 `superpowers` | Skills + disciplines: brainstorming, TDD, debugging, reviews. |
-| 🔍 `codex` | A grumpy second reviewer (`/codex:review`, `/codex:adversarial-review`). |
-| 📚 `context7` | Live library/API docs, so I stop hallucinating APIs from memory. |
-| ✅ `commit-commands` | `/commit`, `/commit-push-pr`, branch cleanup. |
+| `superpowers` | Skills + disciplines: brainstorming, TDD, debugging, reviews. |
+| `codex` | A grumpy second reviewer (`/codex:review`, `/codex:adversarial-review`). |
+| `context7` | Live library/API docs, so I stop hallucinating APIs from memory. |
+| `commit-commands` | `/commit`, `/commit-push-pr`, branch cleanup. |
 
 The rest pull their weight only when the work calls for it: `pyright-lsp` / `typescript-lsp` for Python/TS navigation, `frontend-design` for UI, `chrome-devtools-mcp` for browser debugging, `security-guidance` for the scary changes.
 
-## 🤖 The agent
+## The agent
 
 `dev-pattern-researcher` digs up what practitioners *actually* do right now (sources < 12 months old) and hands back a recommendation — not a pile of links.
 
-## 📄 License
+## License
 
 [MIT](LICENSE) — take it, remix it, no warranty.
