@@ -21,7 +21,7 @@ Minimum code that solves the problem. Nothing speculative.
 Use in-line comments and keep them direct and focused strictly on business logic; avoid conversational meta-comments that explain chat-driven changes or document removed code.
 
 ## New Feature or Major Change
-For a new feature, refactor, or architecture change, always run the `dev-pattern-research` agent - even when the user already gave you the architecture. When the user's proposed approach conflicts with the standards, or when there is a better alternative, raise the concern and wait before continuing.
+For a new feature, refactor, or architecture change, always run the `dev-pattern-researcher` agent - even when the user already gave you the architecture. When the user's proposed approach conflicts with the standards, or when there is a better alternative, raise the concern and wait before continuing.
 
 Always run 2 reviews for major updates:
 - Superpowers review: Invoke `superpowers:requesting-code-review` with 2 sub-agents using different models.
