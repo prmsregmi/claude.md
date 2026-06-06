@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "ENABLE_LSP_TOOL": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "LS",
+      "Edit",
+      "MultiEdit",
+      "Write",
+      "Bash(git *)",
+      "Bash(alembic *)",
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(.venv/bin/python *)",
+      "Bash(.venv/bin/python3 *)",
+      "Bash(cat *)",
+      "Bash(find *)",
+      "Bash(pytest *)",
+      "Bash(.venv/bin/pytest *)",
+      "Bash(uv run *)",
+      "Bash(uv add *)",
+      "Bash(uv sync *)",
+      "Bash(pnpm install *)",
+      "Bash(pnpm run *)",
+      "Bash(pnpm add *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "WebFetch",
+      "WebSearch",
+      "Bash(echo *)",
+      "Bash(grep *)",
+      "Bash(wc *)",
+      "Bash(tree *)",
+      "Bash(ls *)",
+      "Bash(which *)",
+      "Bash(cd *)",
+      "Bash(mkdir *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(sort *)",
+      "Bash(diff *)",
+      "Bash(sed *)",
+      "Bash(awk *)",
+      "Bash(cut *)",
+      "Bash(tsc *)",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__*",
+      "mcp__plugin_context7_context7__*",
+      "mcp__context7__*",
+      "mcp__chrome-devtools__*",
+      "Skill(*)",
+      "Bash(gh api *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(~/.ssh/**)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(~/.zsh_history)",
+      "Bash(gh api * -X DELETE*)",
+      "Bash(gh api * --method DELETE*)",
+      "Bash(git branch -D *)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(git rm *)",
+      "Bash(git mv *)",
+      "Bash(git clean *)",
+      "Bash(git restore *)",
+      "Bash(git checkout -- *)",
+      "Bash(alembic revision -m *)",
+      "Bash(alembic revision --message *)",
+      "Bash(alembic downgrade *)",
+      "Bash(alembic stamp *)",
+      "Bash(alembic upgrade *)",
+      "Bash(alembic merge *)",
+      "Bash(git push --force *)",
+      "Bash(git push * --force *)",
+      "Bash(git push -f *)",
+      "Bash(git push * -f *)",
+      "Bash(npm publish *)",
+      "Bash(npm unpublish *)",
+      "Bash(npm deprecate *)",
+      "Bash(npm dist-tag *)",
+      "Bash(npm owner *)",
+      "Bash(npm access *)",
+      "Bash(npm token *)",
+      "Bash(gh api * -X POST*)",
+      "Bash(gh api * -X PUT*)",
+      "Bash(gh api * -X PATCH*)",
+      "Bash(gh api * --method POST*)",
+      "Bash(gh api * --method PUT*)",
+      "Bash(gh api * --method PATCH*)"
+    ],
+    "defaultMode": "auto"
+  },
+  "enabledPlugins": {
+    "chrome-devtools-mcp@chrome-devtools-plugins": true,
+    "commit-commands@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  }
+}
